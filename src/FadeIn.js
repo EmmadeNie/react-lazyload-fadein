@@ -21,6 +21,7 @@ class FadeIn extends React.Component {
     onLoad = () => this.setState({ loaded: true });
 
     render() {
+        console.log("lazyLoad fadeIn")
         const { height, duration = 500, easing, children, render, offset, ...restProps } = this.props,
             { loaded } = this.state;
 
@@ -34,7 +35,7 @@ class FadeIn extends React.Component {
                     {state => (
                         <div
                             style={{
-                                ...getStyle({duration, easing}),
+                                ...getStyle({ duration, easing }),
                                 ...transitionStyles[state]
                             }}
                         >
